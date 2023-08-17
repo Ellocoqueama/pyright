@@ -40,8 +40,8 @@ Relative paths specified within the config file are relative to the config file�
 
 **useLibraryCodeForTypes** [boolean]: Determines whether pyright reads, parses and analyzes library code to extract type information in the absence of type stub files. Type information will typically be incomplete. We recommend using type stubs where possible. The default value for this option is true.
 
-
 ## Type Check Diagnostics Settings
+
 The following settings control pyright’s diagnostic output (warnings or errors). Unless otherwise specified, each diagnostic setting can specify a boolean value (`false` indicating that no error is generated and `true` indicating that an error is generated). Alternatively, a string value of `"none"`, `"warning"`, `"information"`, or `"error"` can be used to specify the diagnostic level.
 
 <a name="strictListInference"></a> **strictListInference** [boolean]: When inferring the type of a list, use strict type assumptions. For example, the expression `[1, 'a', 3.4]` could be inferred to be of type `list[Any]` or `list[int | str | float]`. If this setting is true, it will use the latter (stricter) type. The default value for this setting is `false`.
@@ -187,6 +187,7 @@ The following settings control pyright’s diagnostic output (warnings or errors
 <a name="reportShadowedImports"></a> **reportShadowedImports** [boolean or string, optional]: Generate or suppress diagnostics for files that are overriding a module in the stdlib. The default value for this setting is `"none"`.
 
 ## Execution Environment Options
+
 Pyright allows multiple “execution environments” to be defined for different portions of your source tree. For example, a subtree may be designed to run with different import search paths or a different version of the python interpreter than the rest of the source base.
 
 The following settings can be specified for each execution environment.
@@ -199,9 +200,10 @@ The following settings can be specified for each execution environment.
 
 **pythonPlatform** [string, optional]: Specifies the target platform that will be used for this execution environment. If not specified, the global `pythonPlatform` setting is used instead.
 
-
 ## Sample Config File
+
 The following is an example of a pyright config file:
+
 ```json
 {
   "include": [
@@ -263,6 +265,7 @@ The following is an example of a pyright config file:
 ```
 
 ## Sample pyproject.toml File
+
 ```toml
 [tool.pyright]
 include = ["src"]
